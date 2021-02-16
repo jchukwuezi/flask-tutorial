@@ -1,0 +1,22 @@
+{% block title %} Form Page {% endblock %}
+
+{% block content %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+             {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <h1> Sample Form </h1>
+    <p>Please enter name and email address down below</p>
+    
+    <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Enter name">
+        <br>
+        <input type="email" name="email" placeholder="Enter email">
+        <input type="submit" value="SUBMIT">
+    </form>
+{% endblock %}
